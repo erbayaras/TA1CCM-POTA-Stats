@@ -1,0 +1,20 @@
+{
+  "callsign": "TA1CCM",
+  "updated_utc": "2026-10-30T00:53:00+00:00",
+  "activator": {
+    "activations": 55,
+    "parks": 22,
+    "qsos": 5998
+  },
+  "attempts": {
+    "activations": 57,
+    "parks": 22,
+    "qsos": 5998
+  },
+  "hunter": {
+    "parks": 416,
+    "qsos": 543
+  },
+  "awards": 21,
+  "endorsements": 34
+}
