@@ -1,16 +1,7 @@
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>TA1CCM POTA Dashboard</title>
-</head>
-<body style="background:#090d09;color:#d6b77d;font-family:Arial;text-align:center;padding:40px">
-  <h1>TA1CCM</h1>
-  <h2>POTA / WWFF STATISTICS</h2>
-  <p>DX Command Center</p>
-  <p>Dashboard installation successful!</p>
-  <p>73 &amp; 44</p>
-</body>
-</html>
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>TA1CCM • POTA Statistics</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#0a100b;color:#f0ead8;font:16px Arial,sans-serif}.wrap{max-width:980px;margin:auto;padding:35px 18px}header{border-bottom:1px solid #526043;padding-bottom:24px;margin-bottom:24px}.eyebrow{color:#b5c3a4;letter-spacing:3px;font-size:12px}h1{color:#dfc18b;font-size:clamp(32px,6vw,52px);margin:8px 0}h2{font-size:18px;color:#dfc18b;margin:32px 0 14px}.sub{color:#9eaf94}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.card{background:#192319;border:1px solid #40513a;border-radius:12px;padding:22px 14px;text-align:center}.num{font-size:clamp(26px,4vw,44px);font-weight:bold;color:#e0bf7c}.label{margin-top:8px;font-size:12px;letter-spacing:1.2px;color:#b8c5b1;text-transform:uppercase}footer{border-top:1px solid #40513a;margin-top:34px;padding-top:18px;font-size:13px;color:#aebaa5}a{color:#dfc18b}@media(max-width:550px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+</style></head><body><div class="wrap"><header><div class="eyebrow">TA1CCM / FIELD OPERATIONS</div><h1>POTA STATISTICS</h1><div class="sub">Live data from Parks on the Air • 73 &amp; 44</div></header><h2>ACTIVATOR</h2><div class="grid"><div class="card"><div class="num" id="aq">—</div><div class="label">QSOs</div></div><div class="card"><div class="num" id="ap">—</div><div class="label">Parks</div></div><div class="card"><div class="num" id="aa">—</div><div class="label">Activations</div></div></div><h2>HUNTER &amp; AWARDS</h2><div class="grid"><div class="card"><div class="num" id="hp">—</div><div class="label">Parks hunted</div></div><div class="card"><div class="num" id="hq">—</div><div class="label">Hunter QSOs</div></div><div class="card"><div class="num" id="aw">—</div><div class="label">Awards</div></div></div><footer><span id="status">Loading latest statistics…</span><p>Source: <a href="https://pota.app/">Parks on the Air</a>. WWFF statistics are not included in these POTA totals.</p></footer></div><script>
+(async()=>{try{const r=await fetch('stats.json?ts='+Date.now(),{cache:'no-store'});if(!r.ok)throw new Error('HTTP '+r.status);const d=await r.json();const f=n=>Number(n??0).toLocaleString('en-US');for(const [id,v] of Object.entries({aq:d.activator.qsos,ap:d.activator.parks,aa:d.activator.activations,hp:d.hunter.parks,hq:d.hunter.qsos,aw:d.awards}))document.getElementById(id).textContent=f(v);document.getElementById('status').textContent='Last synced: '+new Date(d.updated_utc).toLocaleString();}catch(e){document.getElementById('status').textContent='Statistics temporarily unavailable. Please try again later.';}})();
+</script></body></html>
